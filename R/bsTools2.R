@@ -891,6 +891,7 @@ bs_select <- function(
 #' with HTML defining the drop-down as the value of the item.
 #' @param nav_attr A named list or named vector, names are attribute names and values are attribute values. Passed to the attr parameter of html5::nav.
 #' @param container_attr A named list or named vector, names are attribute names and values are attribute values. Passed to the attr parameter of html5::div to be used as a container.
+#' @param div_attr A named list or named vector, names are attribute names and values are attribute values. Passed to the attr parameter of html5::div wrapping the brand and left and right content.
 #' @param brand_attr A named list or named vector, names are attribute names and values are attribute values. Passed to the attr parameter of html5::a containing the brand href and text.
 #' @param from_left_ul_attr A named list or named vector, names are attribute names and values are attribute values. Passed to the attr parameter of html5::ul.
 #' @param from_right_ul_attr A named list or named vector, names are attribute names and values are attribute values. Passed to the attr parameter of html5::ul.
@@ -915,6 +916,7 @@ bs_navbar <- function(
   from_right = list(),
   nav_attr = c("class" = "navbar bg-primary navbar-dark navbar-expand-lg"),
   container_attr = c("class" = "container-fluid"),
+  div_attr = c(),
   brand_attr = c("class" = "navbar-brand"),
   from_left_ul_attr = c("class" = "navbar-nav me-auto"),
   from_right_ul_attr = c("class" = "navbar-nav"),
@@ -1005,27 +1007,30 @@ bs_navbar <- function(
       attr = nav_attr,
       bs_container(
         container_attr = container_attr,
-        brand,
-        button(
-          attr = c(
-            "class" = "navbar-toggler",
-            "type" = "button",
-            "data-bs-toggle" = "collapse",
-            "data-bs-target" = paste0("#", id)
-          ),
-          span(
-            attr = c("class" = "navbar-toggler-icon")
-          )
-        ),
         div(
-          attr = c(
-            "class" = "collapse navbar-collapse",
-            "id" = id
+          attr = div_attr,
+          brand,
+          button(
+            attr = c(
+              "class" = "navbar-toggler",
+              "type" = "button",
+              "data-bs-toggle" = "collapse",
+              "data-bs-target" = paste0("#", id)
+            ),
+            span(
+              attr = c("class" = "navbar-toggler-icon")
+            )
           ),
-          paste0(
-            left_nav,
-            right_nav,
-            collapse = ""
+          div(
+            attr = c(
+              "class" = "collapse navbar-collapse",
+              "id" = id
+            ),
+            paste0(
+              left_nav,
+              right_nav,
+              collapse = ""
+            )
           )
         )
       )
@@ -1768,6 +1773,7 @@ bs_dropdown <- function(
 #' @param title A string, the HTML to display in the title of the card.
 #' @param text A string, the HTML to display in the text of the card.
 #' @param body A string, the HTML to display in the body of the card.
+#' @param footer A string, the HTML to display in the footer of the card.
 #' @param img_src A string, the path of an image to display with the card. Passed to "src" attribute of the <img> tag.
 #' @param img_alt A string, the alt attribute of an image to display with the card. Passed to "alt" attribute of the <img> tag.
 #' @param div_attr A named list or named vector, names are attribute names and values are attribute values. Added to the div wrapping the card content.
@@ -1775,7 +1781,11 @@ bs_dropdown <- function(
 #' @param title_attr A named list or named vector, names are attribute names and values are attribute values. Added to the card title.
 #' @param text_attr A named list or named vector, names are attribute names and values are attribute values. Added to the card text.
 #' @param body_attr A named list or named vector, names are attribute names and values are attribute values. Added to the div wrapping the card body.
+#' @param footer_attr A named list or named vector, names are attribute names and values are attribute values. Added to the div wrapping the card footer.
 #' @param img_attr A named list or named vector, names are attribute names and values are attribute values. Added to the img tag if an image is to be displayed.
+#' @param header_func A html5 function to use for the header input.
+#' @param title_func A html5 function to use for the title input.
+#' @param text_func A html5 function to use for the text input.
 #' @return A string of HTML.
 #' @examples
 #' bs_card(
@@ -1786,6 +1796,7 @@ bs_card <- function(
   title = NULL,
   text = NULL,
   body,
+  footer = NULL,
   img_src = NULL,
   img_alt = NULL,
   div_attr = c("class" = "card"),
@@ -1793,7 +1804,11 @@ bs_card <- function(
   title_attr = c("class" = "card-title"),
   text_attr = c("class" = "card-text"),
   body_attr = c("class" = "card-body"),
-  img_attr = c("class" = "card-img-top")
+  footer_attr = c("class" = "card-footer"),
+  img_attr = c("class" = "card-img-top"),
+  header_func = h5,
+  title_func = h5,
+  text_func = h5
 ){
   return(
     div(
@@ -1810,24 +1825,29 @@ bs_card <- function(
         ""
       },
       if(is.null(header) == FALSE){
-        h5(attr = header_attr, header)
+        header_func(attr = header_attr, header)
       }else{
         ""
       },
       div(
         attr = body_attr,
         if(is.null(title) == FALSE){
-          h5(attr = title_attr, title)
+          title_func(attr = title_attr, title)
         }else{
           ""
         },
         if(is.null(text) == FALSE){
-          h5(attr = text_attr, text)
+          text_func(attr = text_attr, text)
         }else{
           ""
         },
         body
-      )
+      ),
+      if(is.null(footer) == FALSE){
+        div(attr = footer_attr, footer)
+      }else{
+        ""
+      }
     )
   )
 }

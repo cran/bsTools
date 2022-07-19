@@ -9,6 +9,7 @@ bs_card(
   title = NULL,
   text = NULL,
   body,
+  footer = NULL,
   img_src = NULL,
   img_alt = NULL,
   div_attr = c(class = "card"),
@@ -16,7 +17,11 @@ bs_card(
   title_attr = c(class = "card-title"),
   text_attr = c(class = "card-text"),
   body_attr = c(class = "card-body"),
-  img_attr = c(class = "card-img-top")
+  footer_attr = c(class = "card-footer"),
+  img_attr = c(class = "card-img-top"),
+  header_func = h5,
+  title_func = h5,
+  text_func = h5
 )
 }
 \arguments{
@@ -27,6 +32,8 @@ bs_card(
 \item{text}{A string, the HTML to display in the text of the card.}
 
 \item{body}{A string, the HTML to display in the body of the card.}
+
+\item{footer}{A string, the HTML to display in the footer of the card.}
 
 \item{img_src}{A string, the path of an image to display with the card. Passed to "src" attribute of the <img> tag.}
 
@@ -42,7 +49,15 @@ bs_card(
 
 \item{body_attr}{A named list or named vector, names are attribute names and values are attribute values. Added to the div wrapping the card body.}
 
+\item{footer_attr}{A named list or named vector, names are attribute names and values are attribute values. Added to the div wrapping the card footer.}
+
 \item{img_attr}{A named list or named vector, names are attribute names and values are attribute values. Added to the img tag if an image is to be displayed.}
+
+\item{header_func}{A html5 function to use for the header input.}
+
+\item{title_func}{A html5 function to use for the title input.}
+
+\item{text_func}{A html5 function to use for the text input.}
 }
 \value{
 A string of HTML.

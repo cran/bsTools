@@ -11,6 +11,7 @@ bs_navbar(
   from_right = list(),
   nav_attr = c(class = "navbar bg-primary navbar-dark navbar-expand-lg"),
   container_attr = c(class = "container-fluid"),
+  div_attr = c(),
   brand_attr = c(class = "navbar-brand"),
   from_left_ul_attr = c(class = "navbar-nav me-auto"),
   from_right_ul_attr = c(class = "navbar-nav"),
@@ -41,6 +42,8 @@ with HTML defining the drop-down as the value of the item.}
 \item{nav_attr}{A named list or named vector, names are attribute names and values are attribute values. Passed to the attr parameter of html5::nav.}
 
 \item{container_attr}{A named list or named vector, names are attribute names and values are attribute values. Passed to the attr parameter of html5::div to be used as a container.}
+
+\item{div_attr}{A named list or named vector, names are attribute names and values are attribute values. Passed to the attr parameter of html5::div wrapping the brand and left and right content.}
 
 \item{brand_attr}{A named list or named vector, names are attribute names and values are attribute values. Passed to the attr parameter of html5::a containing the brand href and text.}
 

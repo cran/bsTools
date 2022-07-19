@@ -1,6 +1,6 @@
-3d105e54d5ec38ef96528aa1d625e558 *DESCRIPTION
+5bdfbc5cd6f37092d83e487d94c6ec29 *DESCRIPTION
 77c72489fb07bd6ae001fcd71007fa4e *NAMESPACE
-7e748ea836d221b714cdbf152bcfa9e7 *R/bsTools2.R
+cbc0caefbda7e64ca8245fd241a538ce *R/bsTools2.R
 6166d6cf9ac107e244b796ac902f3a48 *R/sysdata.rda
 a2b177281fb2a7571410e33af9b66341 *man/bs_accordion.Rd
 e392c80568ce00251feb2ff428d3b646 *man/bs_alert.Rd
@@ -8,7 +8,7 @@ fd02c1c32aa04e4980cf5c1a79df697d *man/bs_badge.Rd
 542627c527b6ed81fa8d9dbd1eb92abf *man/bs_black.Rd
 740f3edd3995e8365d5f274f2a28f005 *man/bs_blue.Rd
 b47bef21b2b381a79ea7dacc9462c4de *man/bs_breadcrumb.Rd
-250386dd97c82fb5fdb45e0087d4c65a *man/bs_card.Rd
+91bd48fb5c667d20034abab46d0e592e *man/bs_card.Rd
 223faaa69cb3cd6abd394387d447800c *man/bs_carousel.Rd
 1d1239fef39141b29f6cd63bdb85cdeb *man/bs_clearfix.Rd
 b36193a125bd89c12b2e8757916cdeb7 *man/bs_col.Rd
@@ -30,7 +30,7 @@ a1a9d11a34e097a3850d45f1dd823b62 *man/bs_indigo.Rd
 cbffae6fbf248eec68509bfb4953d730 *man/bs_light.Rd
 0263cd7a29630651f1f5468de2ccced3 *man/bs_modal.Rd
 f5d063702607b769dc13eae4a8cf158d *man/bs_nav.Rd
-75c3c43e37b2ebb8aae142fbd807eee9 *man/bs_navbar.Rd
+10a26fe754f2da35c5d3a517b670c425 *man/bs_navbar.Rd
 c6af6915d6cde53e2d7c68e0b6a53dbc *man/bs_offcanvas.Rd
 837143e9d2b6035ad917da2f5765b55a *man/bs_orange.Rd
 0becccc908da74ec0c3708b47133e42c *man/bs_pagination.Rd
