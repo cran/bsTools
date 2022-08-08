@@ -5,7 +5,7 @@
 \title{Create a Bootstrap navbar}
 \usage{
 bs_navbar(
-  id = sampleStr(12, sample_chars = c(letters, LETTERS)),
+  id = toolbox::sampleStr(12, sample_chars = c(letters, LETTERS)),
   brand = list(),
   from_left = list(),
   from_right = list(),

@@ -194,64 +194,6 @@
 #' @format A string
 "bs_cyan"
 
-#' Generates (pseudo)random strings of the specified char length
-#'
-#' @param n_char A integer, the number of chars to include in the output string.
-#' @param sample_chars A vector of characters to sample from. Includes the lowercase and uppercase English alphabet and 0-9 by default.
-#' @return A string.
-#' @examples
-#' sampleStr(10)
-sampleStr <- function(n_char, sample_chars = c(letters, LETTERS, 0:9)){
-  x <- c()
-  for(i in seq_len(n_char)){
-    x <- c(x, sample(sample_chars, 1))
-  }
-  return(
-    paste0(x, collapse = "")
-  )
-}
-
-#' Paste together columns of a list/data frame
-#'
-#' @param x A list or data frame.
-#' @param sep A character sting to separate the terms.
-#' @param collapse An optional character string to separate the results.
-#' @param use_paste0 Boolean, if TRUE, will call paste0 instead of paste.
-#' @param cols An optional vector of column positions or names to paste together. If passing column names, set by_name to TRUE.
-#' The order of items in cols determines the order of the paste result.
-#' @param by_name Boolean, if TRUE, it quotes the items in cols to properly index the list by name (x[[1]] vs x[["col_a"]]).
-#' @return A string with the values in each column pasted together.
-#' @examples
-#' pasteCols(list("x" = c(1, 2, 3), "y" = c("a", "b", "c")))
-pasteCols <- function(
-  x,
-  sep = " ",
-  collapse = NULL,
-  use_paste0 = FALSE,
-  cols = NULL,
-  by_name = FALSE
-){
-  if(is.null(cols) == TRUE){
-    cols <- seq_len(length(x))
-  }else{
-    if(by_name == TRUE){
-      cols <- shQuote(cols)
-    }
-  }
-  if(use_paste0 == FALSE){
-    str <- paste0(
-      "paste(", paste0("x[[", cols, "]]", collapse = ", "), ", sep = ", shQuote(sep), if(is.null(collapse) == FALSE){paste0(", collapse = ", shQuote(collapse))}else{""}, ")"
-    )
-  }else{
-    str <- paste0(
-      "paste0(", paste0("x[[", cols, "]]", collapse = ", "), if(is.null(collapse) == FALSE){paste0(", collapse = ", shQuote(collapse))}else{""}, ")"
-    )
-  }
-  return(
-    eval(str2expression(str))
-  )
-}
-
 #' Create a HTML document preconfigured to load Bootstrap5 from the CDN
 #'
 #' Learn more at \url{https://getbootstrap.com/docs/5.1/getting-started/introduction/}.
@@ -582,7 +524,7 @@ bs_table <- function(
     ),
     tbody(
       attr = tbody_attr,
-      tr(attr = tr_attr, pasteCols(lapply(x, td, attr = td_attr, separate = TRUE, collapse = NULL), use_paste0 = TRUE))
+      tr(attr = tr_attr, toolbox::pasteCols(lapply(x, td, attr = td_attr, separate = TRUE, collapse = NULL), use_paste0 = TRUE))
     )
   )
   return(
@@ -910,7 +852,7 @@ bs_select <- function(
 #' )
 #' )
 bs_navbar <- function(
-  id = sampleStr(12, sample_chars = c(letters, LETTERS)),
+  id = toolbox::sampleStr(12, sample_chars = c(letters, LETTERS)),
   brand = list(),
   from_left = list(),
   from_right = list(),

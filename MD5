@@ -1,6 +1,6 @@
-5bdfbc5cd6f37092d83e487d94c6ec29 *DESCRIPTION
+4c9de8db3aac77b234545be726d2c6d7 *DESCRIPTION
 77c72489fb07bd6ae001fcd71007fa4e *NAMESPACE
-cbc0caefbda7e64ca8245fd241a538ce *R/bsTools2.R
+20d8a860be79b6ca7d721507cb9dd171 *R/bsTools2.R
 6166d6cf9ac107e244b796ac902f3a48 *R/sysdata.rda
 a2b177281fb2a7571410e33af9b66341 *man/bs_accordion.Rd
 e392c80568ce00251feb2ff428d3b646 *man/bs_alert.Rd
@@ -30,7 +30,7 @@ a1a9d11a34e097a3850d45f1dd823b62 *man/bs_indigo.Rd
 cbffae6fbf248eec68509bfb4953d730 *man/bs_light.Rd
 0263cd7a29630651f1f5468de2ccced3 *man/bs_modal.Rd
 f5d063702607b769dc13eae4a8cf158d *man/bs_nav.Rd
-10a26fe754f2da35c5d3a517b670c425 *man/bs_navbar.Rd
+aba3bd26a9179c034c48a4b4c8d93563 *man/bs_navbar.Rd
 c6af6915d6cde53e2d7c68e0b6a53dbc *man/bs_offcanvas.Rd
 837143e9d2b6035ad917da2f5765b55a *man/bs_orange.Rd
 0becccc908da74ec0c3708b47133e42c *man/bs_pagination.Rd
@@ -56,5 +56,3 @@ ed033a58915039f8410bd3e9104f8576 *man/bs_white.Rd
 0eafd0d18983c266fb7faf3918d3cbe1 *man/css_integrity_var.Rd
 00af97fd0b776526ddb9f25010701f21 *man/js_integrity_var.Rd
 48bdeb55079ca7808d39507e2b3487c5 *man/js_src_var.Rd
-e391515f46ea36de793feab9358daa4e *man/pasteCols.Rd
-d2d6c0d42b1d41bdcd838c37b3f51eb0 *man/sampleStr.Rd
