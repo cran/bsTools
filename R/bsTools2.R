@@ -200,6 +200,7 @@
 #'
 #' @param head A string of HTML that will be passed to the ... param of the html5::head() function.
 #' @param body A string of HTML that will be passed to the ... param of the html5::body() function.
+#' @param body_attr A named list or named vector, passed to the attr param of the html5::body() function.
 #' @param css_href The url of jsDelivr for the version of bootstrap css to include.
 #' @param css_integrity The integrity string for the version of bootstrap css to include.
 #' @param js_src The url of jsDelivr for the version of bootstrap js bundle to include.
@@ -212,6 +213,7 @@
 bs_doc <- function(
   head = NULL,
   body,
+  body_attr = NULL,
   css_href = css_href_var,
   css_integrity = css_integrity_var,
   js_src = js_src_var,
@@ -246,6 +248,7 @@ bs_doc <- function(
           head
         ),
         html5::body(
+          attr = body_attr,
           body,
           script(
             attr = c(

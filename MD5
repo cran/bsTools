@@ -1,6 +1,6 @@
-4c9de8db3aac77b234545be726d2c6d7 *DESCRIPTION
+5a81439423c251a322a5b50c3d3c76aa *DESCRIPTION
 77c72489fb07bd6ae001fcd71007fa4e *NAMESPACE
-20d8a860be79b6ca7d721507cb9dd171 *R/bsTools2.R
+be7b4b19bed9262f0e20c6a0f4ea37dc *R/bsTools2.R
 6166d6cf9ac107e244b796ac902f3a48 *R/sysdata.rda
 a2b177281fb2a7571410e33af9b66341 *man/bs_accordion.Rd
 e392c80568ce00251feb2ff428d3b646 *man/bs_alert.Rd
@@ -18,7 +18,7 @@ addc03c00265d668364b6c941f2eb4d2 *man/bs_col_break.Rd
 a69fd4b2645df91bcdb8ae1b154ce7d6 *man/bs_cyan.Rd
 915f8c060547a6198294794453aebb41 *man/bs_danger.Rd
 5052e338ddd96c95730ba22445bd8486 *man/bs_dark.Rd
-2817f756f6ae4cbe63470c73974b54e5 *man/bs_doc.Rd
+e862823d9f3dd4b7ed1ae7c4dc7fabde *man/bs_doc.Rd
 9963c592459438f12882281e48f0d4e8 *man/bs_dropdown.Rd
 dde58d0f05037bed9159e96f565d71a0 *man/bs_figure.Rd
 bea070dbf20ab5e011641337ebd28c0e *man/bs_flexbox.Rd

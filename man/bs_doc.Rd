@@ -7,6 +7,7 @@
 bs_doc(
   head = NULL,
   body,
+  body_attr = NULL,
   css_href = css_href_var,
   css_integrity = css_integrity_var,
   js_src = js_src_var,
@@ -17,6 +18,8 @@ bs_doc(
 \item{head}{A string of HTML that will be passed to the ... param of the html5::head() function.}
 
 \item{body}{A string of HTML that will be passed to the ... param of the html5::body() function.}
+
+\item{body_attr}{A named list or named vector, passed to the attr param of the html5::body() function.}
 
 \item{css_href}{The url of jsDelivr for the version of bootstrap css to include.}
 
