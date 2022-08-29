@@ -21,7 +21,12 @@ bs_card(
   img_attr = c(class = "card-img-top"),
   header_func = h5,
   title_func = h5,
-  text_func = h5
+  text_func = h5,
+  img_left = FALSE,
+  img_right = FALSE,
+  img_col_attr = c(class = "col-md-6"),
+  body_col_attr = c(class = "col-md-6"),
+  img_horizontal_attr = c(class = "img-fluid")
 )
 }
 \arguments{
@@ -58,6 +63,16 @@ bs_card(
 \item{title_func}{A html5 function to use for the title input.}
 
 \item{text_func}{A html5 function to use for the text input.}
+
+\item{img_left}{TRUE/FALSE, if TRUE, places the image on the left of the card}
+
+\item{img_right}{TRUE/FALSE, if TRUE, places the image on the right of the card}
+
+\item{img_col_attr}{A named list or named vector, names are attribute names and values are attribute values. Added to the column containing the img tag if an image is to be displayed horizontally.}
+
+\item{body_col_attr}{A named list or named vector, names are attribute names and values are attribute values. Added to the column containing the body if an image is to be displayed horizontally.}
+
+\item{img_horizontal_attr}{A named list or named vector, names are attribute names and values are attribute values. Added to the img tag if an image is to be displayed horizontally.}
 }
 \value{
 A string of HTML.

@@ -1,6 +1,6 @@
-5a81439423c251a322a5b50c3d3c76aa *DESCRIPTION
+50e651f6ee6cff957abafbef9b563899 *DESCRIPTION
 77c72489fb07bd6ae001fcd71007fa4e *NAMESPACE
-be7b4b19bed9262f0e20c6a0f4ea37dc *R/bsTools2.R
+d85858cb414c167410f4f2734f34346e *R/bsTools2.R
 6166d6cf9ac107e244b796ac902f3a48 *R/sysdata.rda
 a2b177281fb2a7571410e33af9b66341 *man/bs_accordion.Rd
 e392c80568ce00251feb2ff428d3b646 *man/bs_alert.Rd
@@ -8,7 +8,7 @@ fd02c1c32aa04e4980cf5c1a79df697d *man/bs_badge.Rd
 542627c527b6ed81fa8d9dbd1eb92abf *man/bs_black.Rd
 740f3edd3995e8365d5f274f2a28f005 *man/bs_blue.Rd
 b47bef21b2b381a79ea7dacc9462c4de *man/bs_breadcrumb.Rd
-91bd48fb5c667d20034abab46d0e592e *man/bs_card.Rd
+ae85ca35a35e45610a296e17cf0969b5 *man/bs_card.Rd
 223faaa69cb3cd6abd394387d447800c *man/bs_carousel.Rd
 1d1239fef39141b29f6cd63bdb85cdeb *man/bs_clearfix.Rd
 b36193a125bd89c12b2e8757916cdeb7 *man/bs_col.Rd

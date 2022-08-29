@@ -1731,6 +1731,11 @@ bs_dropdown <- function(
 #' @param header_func A html5 function to use for the header input.
 #' @param title_func A html5 function to use for the title input.
 #' @param text_func A html5 function to use for the text input.
+#' @param img_left TRUE/FALSE, if TRUE, places the image on the left of the card
+#' @param img_right TRUE/FALSE, if TRUE, places the image on the right of the card
+#' @param img_col_attr A named list or named vector, names are attribute names and values are attribute values. Added to the column containing the img tag if an image is to be displayed horizontally.
+#' @param body_col_attr A named list or named vector, names are attribute names and values are attribute values. Added to the column containing the body if an image is to be displayed horizontally.
+#' @param img_horizontal_attr A named list or named vector, names are attribute names and values are attribute values. Added to the img tag if an image is to be displayed horizontally.
 #' @return A string of HTML.
 #' @examples
 #' bs_card(
@@ -1753,10 +1758,111 @@ bs_card <- function(
   img_attr = c("class" = "card-img-top"),
   header_func = h5,
   title_func = h5,
-  text_func = h5
+  text_func = h5,
+  img_left = FALSE,
+  img_right = FALSE,
+  img_col_attr = c(class = "col-md-6"),
+  body_col_attr = c(class = "col-md-6"),
+  img_horizontal_attr = c(class = "img-fluid")
 ){
-  return(
-    div(
+  if(img_left){
+    x <- div(
+      attr = div_attr,
+      if(is.null(header) == FALSE){
+        header_func(attr = header_attr, header)
+      }else{
+        ""
+      },
+      bs_row(
+        row_attr = c(class = "row g-0"),
+        bs_col(
+          col_attr = img_col_attr,
+          if(is.null(img_src) == FALSE){
+            img(
+              attr = c(
+                img_horizontal_attr,
+                "src" = img_src,
+                "alt" = img_alt
+              )
+            )
+          }else{
+            ""
+          }
+        ),
+        bs_col(
+          col_attr = body_col_attr,
+          div(
+            attr = body_attr,
+            if(is.null(title) == FALSE){
+              title_func(attr = title_attr, title)
+            }else{
+              ""
+            },
+            if(is.null(text) == FALSE){
+              text_func(attr = text_attr, text)
+            }else{
+              ""
+            },
+            body
+          )
+        )
+      ),
+      if(is.null(footer) == FALSE){
+        div(attr = footer_attr, footer)
+      }else{
+        ""
+      }
+    )
+  }else if(img_right){
+    x <- div(
+      attr = div_attr,
+      if(is.null(header) == FALSE){
+        header_func(attr = header_attr, header)
+      }else{
+        ""
+      },
+      bs_row(
+        row_attr = c(class = "row g-0"),
+        bs_col(
+          col_attr = body_col_attr,
+          div(
+            attr = body_attr,
+            if(is.null(title) == FALSE){
+              title_func(attr = title_attr, title)
+            }else{
+              ""
+            },
+            if(is.null(text) == FALSE){
+              text_func(attr = text_attr, text)
+            }else{
+              ""
+            },
+            body
+          )
+        ),
+        bs_col(
+          col_attr = img_col_attr,
+          if(is.null(img_src) == FALSE){
+            img(
+              attr = c(
+                img_horizontal_attr,
+                "src" = img_src,
+                "alt" = img_alt
+              )
+            )
+          }else{
+            ""
+          }
+        )
+      ),
+      if(is.null(footer) == FALSE){
+        div(attr = footer_attr, footer)
+      }else{
+        ""
+      }
+    )
+  }else{
+    x <- div(
       attr = div_attr,
       if(is.null(img_src) == FALSE){
         img(
@@ -1794,6 +1900,9 @@ bs_card <- function(
         ""
       }
     )
+  }
+  return(
+    x
   )
 }
 

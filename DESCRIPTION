@@ -1,7 +1,7 @@
 Package: bsTools
 Type: Package
 Title: Create HTML Content with Bootstrap 5 Classes and Layouts
-Version: 1.0.4
+Version: 1.0.5
 Author: Timothy Conwell
 Maintainer: Timothy Conwell <timconwell@gmail.com>
 Description: Functions are pre-configured to utilize Bootstrap 5 classes and 
@@ -15,6 +15,6 @@ Depends: R (>= 3.5.0), html5 (>= 1.0.0)
 Imports: toolbox
 RoxygenNote: 7.2.0
 NeedsCompilation: no
-Packaged: 2022-08-22 19:59:28 UTC; tim
+Packaged: 2022-08-29 18:37:45 UTC; tim
 Repository: CRAN
-Date/Publication: 2022-08-22 20:20:05 UTC
+Date/Publication: 2022-08-29 19:40:02 UTC
